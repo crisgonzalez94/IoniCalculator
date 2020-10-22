@@ -1,0 +1,7 @@
+{
+  "name": "testpolitico",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
