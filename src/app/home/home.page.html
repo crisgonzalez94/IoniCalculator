@@ -1,20 +1,100 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Calculator
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size=12>
+        <ion-text>
+          <h1 id="display"  style="text-align: right">{{display}}</h1>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-square" (click)="calcOneSteep('square')">x²</ion-button>
+      </ion-col>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-root" (click)="calcOneSteep('squareRoot')">√</ion-button>
+      </ion-col>
+      <!--Delete Button-->
+      <ion-col size=3>
+        <ion-button expand="block" (click)="deleteNumber()">
+          <ion-icon name="backspace-outline" id="btn-root"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-multiply" (click)="calc('multiply')">X</ion-button>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-seven" (click)="addNumber(7)" color="success">7</ion-button>
+      </ion-col>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-eight" (click)="addNumber(8)" color="success">8</ion-button>
+      </ion-col>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-nine" (click)="addNumber(9)" color="success">9</ion-button>
+      </ion-col>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-add" (click)="calc('add')">+</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-for" (click)="addNumber(4)" color="success">4</ion-button>
+      </ion-col>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-five" (click)="addNumber(5)" color="success">5</ion-button>
+      </ion-col>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-six" (click)="addNumber(6)" color="success">6</ion-button>
+      </ion-col>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-less" (click)="calc('less')">-</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-one" (click)="addNumber(1)" color="success">1</ion-button>
+      </ion-col>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-two" (click)="addNumber(2)" color="success">2</ion-button>
+      </ion-col>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-three" (click)="addNumber(3)" color="success">3</ion-button>
+      </ion-col>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-divide" (click)="calc('divide')">/</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size=6 >
+        <ion-button expand="block" id="btn-zero" (click)="addNumber(0)" color="success">0</ion-button>
+      </ion-col>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-point" (click)="addNumber( '.' )">.</ion-button>
+      </ion-col>
+      <ion-col size=3 >
+        <ion-button expand="block" id="btn-point"  (click)="calc( 'same' )">=</ion-button>
+      </ion-col>
+    </ion-row>
+
+
+  </ion-grid>
+
 </ion-content>
